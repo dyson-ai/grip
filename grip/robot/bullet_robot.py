@@ -693,9 +693,7 @@ class BulletRobot(RobotInterface, Entity):
         self.reset_angles(self.home_positions)
         self.set_angles(self.home_positions)
 
-    def forward_kinematics(
-        self, angles: np.ndarray
-    ) -> Tuple[np.ndarray, np.ndarray]:
+    def forward_kinematics(self, angles: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
         """
         If this robot has kinematics enabled, then this will return the forward kinematic solution for the given angles.
 
