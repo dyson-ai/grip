@@ -694,20 +694,19 @@ class BulletRobot(RobotInterface, Entity):
         self.set_angles(self.home_positions)
 
     def forward_kinematics(
-        self, angles: np.ndarray, end_only: bool = True
+        self, angles: np.ndarray
     ) -> Tuple[np.ndarray, np.ndarray]:
         """
         If this robot has kinematics enabled, then this will return the forward kinematic solution for the given angles.
 
         Args:
             angles (numpy.ndarray): input joint angles.
-            end_only (bool): whether or not to return the FK solution for all links (all link poses) or only the end-effector pose.
         Returns:
             (Tuple[numpy.ndarray, numpy.ndarray]): tuple containing a position shape-(3,) and unit quaternion orientation shape-(4,) as the pose of the end-effector for this robot given the input angles.
         """
         assert self._kin, "Robot Kinematics has not been setup"
 
-        position, orientation = self._kin.forward_kinematics(angles, end_only=end_only)
+        position, orientation = self._kin.forward_kinematics(angles)
 
         return position, orientation
 
