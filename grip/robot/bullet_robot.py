@@ -751,7 +751,7 @@ class BulletRobot(RobotInterface, Entity):
         n_iter = 0
         while n_iter < max_iteration:
             joint_angles = self.inverse_kinematics(position, orientation)
-            ik_pos, ik_orn = self.forward_kinematics(joint_angles, end_only=True)
+            ik_pos, ik_orn = self.forward_kinematics(joint_angles)
             tmp_residual = np.linalg.norm(position - ik_pos)
             close_enough = tmp_residual < residual_threshold
             if close_enough:
