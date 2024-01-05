@@ -1,0 +1,29 @@
+# The ros and pip dependencies take the same form as those above
+pip:
+  # - buildrun: gymnasium>=0.29.0 #for RL environments
+  - buildrun: numpy>=1.25.2 #for numerical computing
+  # - buildrun: pandas #for data operations
+  - buildrun: pybullet #for physics engine and simulation
+  # - buildrun: opencv-python #-headless, opencv-python #for image proc and vision
+  - buildrun: matplotlib #for plotting tools
+  #- buildrun: pybullet-planning #for standalone motion planning
+  - buildrun: ghalton==0.6.1
+  - buildrun: git+https://github.com/logan-dunbar/pybullet_planning.git@3b25fc7a0f350f4b46048be5c42f9cbf3ab2d6fb #for standalone motion planning
+  - buildrun: scipy #for various numerical operations
+  - buildrun: trimesh #for triangular mesh utilities
+  - buildrun: pyglet # for trimesh quick visualisation
+  - buildrun: xatlas # for trimesh quick visualisation
+  # - buildrun: open3d #for 3D point clouds and 3D computer vision
+  - buildrun: open3d #for 3D point clouds and 3D computer vision
+  - buildrun: transforms3d==0.4.1 #transformations==2022.9.26
+ros:
+  - buildrun: image-pipeline
+  - buildrun: moveit-resources-panda-description
+  - buildrun: moveit
+  - buildrun: moveit-resources-panda-moveit-config
+  - buildrun: topic-based-ros2-control
+  - buildrun: ros2-controllers
+  - buildrun: gripper-controllers
+  - buildrun: moveit-ros-perception
+apt:
+  - run: python3-opencv

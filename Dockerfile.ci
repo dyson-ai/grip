@@ -1,0 +1,38 @@
+FROM osrf/ros:humble-desktop-full
+
+
+# Install common programs
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  curl \
+  gnupg2 \
+  lsb-release \
+  sudo \
+  software-properties-common \
+  wget \
+  && rm -rf /var/lib/apt/lists/*
+
+# develop tools 
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  build-essential \
+  python3-pip \
+  ros-dev-tools \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN rosdep init || echo "rosdep already initialized"
+
+# additional apt-source
+RUN echo "deb [trusted=yes] https://github.com/eaa3/ros-humble-packages/raw/jammy-humble/ ./" | sudo tee /etc/apt/sources.list.d/eaa3_ros-humble-packages.list \
+  && echo "yaml https://github.com/eaa3/ros-humble-packages/raw/jammy-humble/local.yaml humble" | sudo tee /etc/ros/rosdep/sources.list.d/1-eaa3_ros-humble-packages.list
+
+RUN echo "deb [trusted=yes] https://github.com/eaa3/ros-humble-franka-packages/raw/jammy-humble/ ./" | sudo tee /etc/apt/sources.list.d/eaa3_ros-humble-franka-packages.list \
+  && echo "yaml https://github.com/eaa3/ros-humble-franka-packages/raw/jammy-humble/local.yaml humble" | sudo tee /etc/ros/rosdep/sources.list.d/1-eaa3_ros-humble-franka-packages.list
+
+
+RUN echo "yaml https://raw.githubusercontent.com/eaa3/custom-ros-deps/main/custom_deps.yaml humble" | sudo tee /etc/ros/rosdep/sources.list.d/1-eaa-custom-deps.list
+
+COPY * /tmp/grip
+
+RUN pip install -r tmp/grip/requirements_dev.txt
+
+RUN apt-get update && rosdep update && rosdep install --from-paths /tmp/grip --ignore-src -y -r

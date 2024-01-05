@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+echo "Script path: ${SCRIPT_DIR}"
+
+pip3 install numpy>=1.25.2 scipy>=1.11.1 pybullet>=3.2.4 open3d>=0.10.0 opencv-python-headless>=4.8.0.76 matplotlib>=3.3.4 ghalton==0.6.1 pybullet_planning@git+https://github.com/eaa3/pybullet_planning.git@dev trimesh==3.9.20 xatlas==0.0.7 transforms3d==0.4.1

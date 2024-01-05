@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+    <!-- Import panda urdf file -->
+    <xacro:include filename="$(find moveit_resources_panda_description)/urdf/panda.urdf" />
+
+    <pybullet>
+        <camera name="wrist_camera">
+            <mode>rgbd</mode>
+            <mode>point_cloud</mode>
+            <frame_name>panda_hand</frame_name>
+            <width>160</width>
+            <height>120</height>
+            <translation_from_link x="0.1" y="0.0" z="0.0" />
+        </camera>
+    </pybullet>
+
+    <link name="box">
+        <visual>
+            <origin xyz="0.5 0.0 0.05" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <box size="0.2 0.5 0.1" />
+            </geometry>
+            <material name="orange">
+                <color rgba="1 0.64 0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.5 0.0 0.05" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <box size="0.2 0.5 0.1" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="box_joint" type="fixed">
+        <parent link="panda_link0" />
+        <child link="box" />
+    </joint>
+
+    <link name="hand_camera_optical_frame">
+
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <box size="0.019 0.1 0.021"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.5 0.5 0.5 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <box size="0.019 0.1 0.021"/>
+            </geometry>
+        </collision>
+
+    </link>
+
+    <joint name="camera_joint" type="fixed">
+        <parent link="panda_hand" />
+        <child link="hand_camera_optical_frame"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.1 0.0 0.05"/>
+    </joint>
+
+
+    <ros2_control name="grip_pybullet_panda" type="system">
+        <hardware>
+            <plugin>topic_based_ros2_control/TopicBasedSystem</plugin>
+            <param name="joint_commands_topic">/arm/joint_commands</param>
+            <param name="joint_states_topic">/arm/joint_states</param>
+            <param name="trigger_joint_command_threshold">0.001</param>
+        </hardware>
+        <joint name="panda_joint1">
+            <command_interface name="position" />
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="panda_joint2">
+            <command_interface name="position" />
+            <state_interface name="position">
+                <param name="initial_value">-0.785</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="panda_joint3">
+            <command_interface name="position" />
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="panda_joint4">
+            <command_interface name="position" />
+            <state_interface name="position">
+                <param name="initial_value">-2.356</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="panda_joint5">
+            <command_interface name="position" />
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="panda_joint6">
+            <command_interface name="position" />
+            <state_interface name="position">
+                <param name="initial_value">1.571</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="panda_joint7">
+            <command_interface name="position" />
+            <state_interface name="position">
+                <param name="initial_value">0.785</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+    </ros2_control>
+
+    <ros2_control name="grip_pybullet_panda_hand" type="system">
+        <hardware>
+            <plugin>topic_based_ros2_control/TopicBasedSystem</plugin>
+            <param name="joint_commands_topic">/gripper/joint_commands</param>
+            <param name="joint_states_topic">/gripper/joint_states</param>
+            <param name="trigger_joint_command_threshold">0.001</param>
+        </hardware>
+        <joint name="panda_finger_joint1">
+            <command_interface name="position" />
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="panda_finger_joint2">
+            <param name="mimic">panda_finger_joint1</param>
+            <param name="multiplier">1</param>
+            <command_interface name="position" />
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+    </ros2_control>
+
+
+</robot>

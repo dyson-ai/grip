@@ -1,0 +1,27 @@
+sensors:
+  # - camera_pointcloud
+  - camera_depthimage
+camera_pointcloud:
+  filtered_cloud_topic: filtered_cloud
+  max_range: 5.0
+  max_update_rate: 1.0
+  ns: camera
+  padding_offset: 0.1
+  padding_scale: 0.5
+  point_cloud_topic: /hand_camera/depth_registered/points
+  point_subsample: 1
+  sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
+camera_depthimage:
+  far_clipping_plane_distance: 5.0
+  filtered_cloud_topic: filtered_cloud
+  image_topic: /hand_camera/depth_registered/undistorted/image_rect
+  max_update_rate: 2.0
+  near_clipping_plane_distance: 0.3
+  ns: camera
+  padding_offset: 0.03
+  padding_scale: 4.0
+  queue_size: 5
+  sensor_plugin: occupancy_map_monitor/DepthImageOctomapUpdater
+  shadow_threshold: 0.2
+  skip_vertical_pixels: 4
+  skip_horizontal_pixels: 6

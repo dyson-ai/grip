@@ -1,0 +1,67 @@
+[tool.ruff]
+target-version = "py310"
+select = [
+  "F", # pyflakes
+  "E",
+  "W", # pycodestyle
+  # flake8-annotations
+  "ANN001", # missing-type-function-argument
+  "ANN201", # missing-return-type-public-function
+  "ANN205", # missing-return-type-static-method
+  "ANN401", # any-type
+  "S",      # flake8-bandit
+  "Q",      # flake8-quotes
+  "B",      # flake8-bugbear
+  "PT",     # flake8-pytest-style
+  "PTH",    # flake8-use-pathlib
+  "I",      # isort
+  "N",      # pep8-naming
+  "D",      # pydocstyle
+  "UP",     # pyupgrade
+  "PL",     # pylint
+]
+ignore = [
+  "PLR0913", # too-many-arguments
+  "N812",
+  "S101",
+  "B006",
+  "B905",    # zip-without-explicit-strict
+  "PLR2004", # magic-value-comparison
+  "D105",    # undocumented-magic-method
+  "PLR0912", # too-many-branches
+  "PLR0915", # too-many-statements
+  "F821",    # undefined-name
+  "PLW2901", # redefined-loop-name
+  "E711",    # none-comparison
+]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.per-file-ignores]
+"test/*" = ["ANN", "S101", "D"]
+
+[tool.pylint]
+extension-pkg-whitelist = ["numpy", "scipy"]
+jobs = 16                                    #detect number of cores
+ignored-modules = ["rclpy", 
+                  "rclpy.callback_groups", 
+                  "cv_bridge", 
+                  "launch_ros", 
+                  "cv2", 
+                  "std_msgs", 
+                  "geometry_msgs", 
+                  "sensor_msgs", 
+                  "pybullet", 
+                  "ros2topic.api", 
+                  "launch", 
+                  "tf2_ros", 
+                  "control_msgs", 
+                  "open3d",
+                  "message_filters",
+                  "ament_index_python.packages",
+                  "urdf_parser_py"]
+
+[tool.pylint.'MESSAGES CONTROL']
+disable = "W0631,W0603,W0221,W0102,C,logging-fstring-interpolation,line-too-long,fixme,broad-exception-caught,missing-module-docstring,too-many-instance-attributes,too-few-public-methods,too-many-arguments,too-many-locals,too-many-branches,too-many-statements,use-dict-literal,cyclic-import,duplicate-code,too-many-public-methods,too-many-nested-blocks"
+enable = "no-else-return,consider-using-in"

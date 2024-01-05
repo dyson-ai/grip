@@ -1,0 +1,32 @@
+grip.egg-info
+*.pyc
+__pycache__
+core
+grasping_results_phase4.txt
+grasping_results_ua.txt
+grasping_results_default.txt
+venv
+.vscode
+grip_docs/docs/api/
+grip_docs/docs/docsTmpFiles/
+grip_docs/docs/src/
+0_VRDemoSettings.txt
+# Dockerfile
+build
+dist
+# test_aruco.py
+python-aruco
+dex
+scripts/setup_venv.sh
+grip_applications/hybrid_grasping/models
+grip_applications/hybrid_grasping/redudant/
+grip_applications/hybrid_grasping/results/
+grip_data/
+install/
+log/
+*.deb
+*debian
+*.ddeb
+.pybuild
+_build
+.coverage

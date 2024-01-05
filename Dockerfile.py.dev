@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/devcontainers/python:0-3.10
+
+RUN apt-get update && apt install git-lfs
+
+RUN python -m pip install --upgrade pip \
+  && python -m pip install 'flit>=3.8.0'
+
+# Env vars for the nvidia-container-runtime.
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES graphics,utility,compute
+ENV QT_X11_NO_MITSHM 1
