@@ -39,7 +39,7 @@ core_requirements = [
     "scipy>=1.11.1",
     "pybullet>=3.2.4",
     "open3d>=0.10.0",
-    "opencv-python-headless>=4.8.0.76",
+    "opencv-python>=4.9.0.80",
     "matplotlib>=3.3.4",
     # "ghalton==0.6.1",
     "pybullet_planning@git+https://github.com/eaa3/pybullet_planning.git@dev",
