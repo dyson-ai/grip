@@ -66,7 +66,7 @@ setup(
         "dev": [
             "pytest",
             "ipdb",
-            "black>=23,<=23.3",
+            "black>=24,<=24.2.0",
             "check-manifest>=0.49,<=0.49",
             "pre-commit>=3.3.3,<=3.3.3",
             "pylint>=2.16,<=2.17.5",

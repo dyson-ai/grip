@@ -8,10 +8,11 @@ pybullet_planning@git+https://github.com/eaa3/pybullet_planning.git@dev # pure p
 trimesh==3.9.20 # mesh processing tools
 xatlas==0.0.7 # mesh parametrisation
 transforms3d==0.4.1
+strenum
 wheel
 pytest
 ipdb
-black>=24,<=24.2
+black>=24,<=24.2.0
 check-manifest>=0.49,<=0.49
 pre-commit>=3.3.3,<=3.3.3
 pylint>=2.16,<=2.17.5
