@@ -31,7 +31,7 @@ python3 -m grip_examples.robot.ex02_robots
 ```
 This will spawn a franka robot that can be controlled through joint sliders. See more examples at `grip_examples`.
 
-1. Run simple ROS2 example (ros2 required)
+3. Run simple ROS2 example (ros2 required)
 
 ```
 python3 -m grip_examples.environments.ex04_ros_robot
