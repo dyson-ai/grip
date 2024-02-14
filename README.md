@@ -29,7 +29,7 @@ This will run a basic pick and place demo. You should see the robot picking and 
 ```
 python3 -m grip_examples.robot.ex02_robots
 ```
-This will spawn a Franka Panda robot that can be controlled through joint sliders. See more examples at `grip_examples`.
+This will spawn a Franka Panda robot that can be controlled through joint sliders. See more examples at [grip_examples](https://github.com/dyson-ai/grip/tree/main/grip_examples).
 
 
 ## Development setup
