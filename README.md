@@ -51,9 +51,9 @@ Development with vscode and running more examples:
 
 
 ## ROS2 examples
-A few basic ROS2 examples are described below.
+A few basic ROS2 examples are showcased below.
 
-### Basic ROS example
+### Basic ROS2 example
 
 Launch file:
 ```
@@ -77,6 +77,6 @@ You should be able to see a bullet simulation of a panda arm, and a pre-configur
 
 ## Topics, services and actions of simulated ROS robot
 
-The provided ROS interface should allow for ROS standard communication (e.g. if you want to connect the robot to moveit, or subscribe to its topics, tf, services, actions, sensors, etc)
+The provided ROS2 interface2 should allow for ROS standard communication (e.g. if you want to connect the robot to moveit, or subscribe to its topics, tf, services, actions, sensors, etc)
 
 Happy coding!
