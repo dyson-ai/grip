@@ -55,7 +55,6 @@ setup(
     description=(
         "Grip is a prototyping toolbox for manipulation research."
         "It contains a collection of tools for creating robot manipulation environments, loading arbitrary robots, including grippers, robot arms, sensors and optional ROS2 interfaces."
-        
     ),
     url="https://github.com/dyson-ai/grip",
     author="Ermano Arruda",
