@@ -14,7 +14,6 @@ ObjectState = TypedDict(
 
 
 class BulletObject(Entity):
-
     """
     The BulletObject represents an interface to a Bullet rigid body.
     An object of this class exposes several utilities for manipulating rigid bodies.
@@ -418,9 +417,7 @@ class BulletObject(Entity):
     def shape_data(self):
         return p.getVisualShapeData(self.id, -1, physicsClientId=self.phys_id)
 
-    def contact_points(
-        self, entity: Entity
-    ) -> List[
+    def contact_points(self, entity: Entity) -> List[
         Tuple[
             int,
             int,

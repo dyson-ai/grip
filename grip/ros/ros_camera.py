@@ -21,7 +21,6 @@ from rclpy.callback_groups import MutuallyExclusiveCallbackGroup
 
 
 class ROSCamera(RGBDCamera):
-
     """
     ROSCamera sensor, inherits from RGBDCamera, exposing extra ROS utilities.
     Represents a simulated or a real RGBD camera.
@@ -262,9 +261,7 @@ class ROSCamera(RGBDCamera):
 
         return self._obs_real(ret_ext=ret_ext)
 
-    def get_cloud_obs(
-        self, full_ret=False
-    ) -> Tuple[
+    def get_cloud_obs(self, full_ret=False) -> Tuple[
         o3d.geometry.PointCloud,
         Optional[o3d.geometry.RGBDImage],
         Optional[o3d.camera.PinholeCameraIntrinsic],

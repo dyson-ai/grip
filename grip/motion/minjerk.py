@@ -259,9 +259,9 @@ def minjerk_trajectory(m_coeffs, num_intervals, duration_array=None):
     for current_mpt in range(num_mpts):
         m_coeff_set = m_coeffs[:, current_mpt, range(7)]
         for iteration, t in enumerate(np.linspace(interval, 1, num_intervals)):
-            m_curve[
-                (current_mpt * num_intervals + iteration + 1), :
-            ] = _minjerk_trajectory_point(m_coeff_set, t * duration_array[current_mpt])
+            m_curve[(current_mpt * num_intervals + iteration + 1), :] = (
+                _minjerk_trajectory_point(m_coeff_set, t * duration_array[current_mpt])
+            )
     return m_curve
 
 

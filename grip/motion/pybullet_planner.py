@@ -13,7 +13,6 @@ from .path import Path
 
 
 class PBBasicPlanner:
-
     """
     This is class supporting basic motion planning in cartesian and configuration space
     with obstacle avoidance on top of the pybullet_planning package, which is a suite of

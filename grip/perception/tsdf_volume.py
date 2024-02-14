@@ -26,9 +26,11 @@ class TSDFVolume(object):
             length=self.size,
             resolution=self.resolution,
             sdf_trunc=self.sdf_trunc,
-            color_type=o3d_integration.TSDFVolumeColorType.RGB8
-            if self.with_colour
-            else o3d_integration.TSDFVolumeColorType.NoColor,
+            color_type=(
+                o3d_integration.TSDFVolumeColorType.RGB8
+                if self.with_colour
+                else o3d_integration.TSDFVolumeColorType.NoColor
+            ),
             origin=self.origin[:3, 3],
         )
 
@@ -121,9 +123,11 @@ class ScalableTSDFVolume(object):
             voxel_length=self.voxel_size,
             volume_unit_resolution=self.resolution,
             sdf_trunc=self.sdf_trunc,
-            color_type=o3d_integration.TSDFVolumeColorType.RGB8
-            if self.with_colour
-            else o3d_integration.TSDFVolumeColorType.NoColor,
+            color_type=(
+                o3d_integration.TSDFVolumeColorType.RGB8
+                if self.with_colour
+                else o3d_integration.TSDFVolumeColorType.NoColor
+            ),
         )
 
     def integrate(self, depth_img, intrinsic, extrinsic, colour_img=None):

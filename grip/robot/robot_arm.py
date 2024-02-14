@@ -4,7 +4,6 @@ from .end_effector_registry import EndEffectorRegistry
 
 
 class BulletRobotArm(BulletRobot):
-
     """A class that specialises a BulletRobot representing a robot arm which can optionally have a gripper as an end-effector"""
 
     def __init__(

@@ -14,7 +14,6 @@ from typing import Tuple, List, Dict, Optional
 
 
 class BulletRobot(RobotInterface, Entity):
-
     """
     The BulletRobot represents an interface and connection to a robot
     An object of this class is exposes all generic functionalities to control a robot

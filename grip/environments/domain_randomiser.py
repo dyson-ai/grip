@@ -80,7 +80,6 @@ class LightingParameters:
 
 
 class LightingRandomiser:
-
     """Randomises phong illumination parameters"""
 
     DEFAULT_PARAMS = LightingParameters()

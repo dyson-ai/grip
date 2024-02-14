@@ -8,7 +8,6 @@ from typing import Dict
 
 
 class DemoReward(grip.environments.Reward):
-
     """An example reward function.
 
     This example computes a 1.0 reward if plate is grasped and placed successfully
@@ -70,7 +69,6 @@ class DemoReward(grip.environments.Reward):
 
 
 class EnvRunner:
-
     """example environment runner: constructs environment and agent and can run one interaction step."""
 
     def __init__(self, *args, **kwargs):

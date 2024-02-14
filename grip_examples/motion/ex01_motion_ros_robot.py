@@ -18,7 +18,6 @@ from grip.motion import PBBasicPlanner
 
 
 class ROSMotionArmExample(rclpy.node.Node):
-
     """This node example will simulate a robot arm with a wrist camera and allow for simple motion planning and execution."""
 
     def __init__(self, camera_fps: int = 10, joint_pub_rate: int = 150):

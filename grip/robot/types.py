@@ -4,7 +4,6 @@ import numpy as np
 
 @dataclass
 class BulletDynamicsInfo:
-
     """
     Information pertinent to the dynamics of a rigid body link.
     More info at: https://docs.google.com/document/d/10sXEhzFRSnvFcl3XxNGhnD4N2SedqwdAvK3dsihxVUA/edit#
@@ -13,9 +12,15 @@ class BulletDynamicsInfo:
 
     mass: float  # mass in kg
     lateral_friction: float  # friction coefficient
-    local_inertia_diagonal: np.ndarray  # local inertia diagonal. Note that links and base are centered around the center of mass and aligned with the principal axes of inertia.
-    local_inertial_pos: np.ndarray  # position of inertial frame in local coordinates of the joint frame
-    local_inertial_orn: np.ndarray  # orientation of inertial frame in local coordinates of joint frame
+    local_inertia_diagonal: (
+        np.ndarray
+    )  # local inertia diagonal. Note that links and base are centered around the center of mass and aligned with the principal axes of inertia.
+    local_inertial_pos: (
+        np.ndarray
+    )  # position of inertial frame in local coordinates of the joint frame
+    local_inertial_orn: (
+        np.ndarray
+    )  # orientation of inertial frame in local coordinates of joint frame
     resolution: float  # coefficient of restitution
     rolling_friction: float  # rolling friction coefficient orthogonal to contact normal
     spinning_friction: float  # spinning friction coefficient around contact normal
@@ -32,7 +37,6 @@ class BulletDynamicsInfo:
 
 @dataclass
 class BulletJointInfo:
-
     """
     Information pertinent to the joints of a rigid body linkage.
     More info at: https://docs.google.com/document/d/10sXEhzFRSnvFcl3XxNGhnD4N2SedqwdAvK3dsihxVUA/edit#
@@ -42,19 +46,29 @@ class BulletJointInfo:
     joint_index: int  # the same joint index as the input parameter
     joint_name: str  # the name of the joint, as specified in the URDF (or SDF etc) file
     joint_type: int  # type of the joint, this also implies the number of position and velocity variables. JOINT_REVOLUTE, JOINT_PRISMATIC, JOINT_SPHERICAL, JOINT_PLANAR, JOINT_FIXED. See the section on Base, Joint and Links for more details.
-    q_index: int  # the first position index in the positional state variables for this body
-    u_index: int  # the first velocity index in the velocity state variables for this body
+    q_index: (
+        int  # the first position index in the positional state variables for this body
+    )
+    u_index: (
+        int  # the first velocity index in the velocity state variables for this body
+    )
     flags: int  # reserved
     joint_damping: float  # the joint damping value, as specified in the URDF file
     joint_friction: float  # the joint friction value, as specified in the URDF file
-    joint_lower_limit: np.ndarray  # Positional lower limit for slider and revolute (hinge) joints, as specified in the URDF file.
-    joint_upper_limit: np.ndarray  # Positional upper limit for slider and revolute joints, as specified in the URDF file. Values ignored in case upper limit <lower limit
+    joint_lower_limit: (
+        np.ndarray
+    )  # Positional lower limit for slider and revolute (hinge) joints, as specified in the URDF file.
+    joint_upper_limit: (
+        np.ndarray
+    )  # Positional upper limit for slider and revolute joints, as specified in the URDF file. Values ignored in case upper limit <lower limit
     joint_max_force: float  # Maximum force specified in URDF (possibly other file formats) Note that this value is not automatically used. You can use maxForce in 'setJointMotorControl2'
     joint_max_velocity: float  # Maximum velocity specified in URDF. Note that the maximum velocity is not used in actual motor control commands at the moment.
     link_name: str  # the name of the link, as specified in the URDF (or SDF etc.) file
     joint_axis: np.ndarray  # joint axis in local frame (ignored for JOINT_FIXED)
     parent_frame_pos: np.ndarray  # joint position in parent frame
-    parent_frame_orn: np.ndarray  # joint orientation in parent frame (quaternion x,y,z,w)
+    parent_frame_orn: (
+        np.ndarray
+    )  # joint orientation in parent frame (quaternion x,y,z,w)
     parent_index: int  # parent link index, -1 for base
 
     def __post_init__(self):
@@ -74,10 +88,16 @@ class VisualShapeData:
     obj_unique_id: int  # object unique id, same as the input
     link_id: int  # link index or -1 for the base
     vis_geom_type: int  # visual geometry type (TBD)
-    dims: np.ndarray  # vec3, list of 3 floats, dimensions (size, local scale) of the geometry
+    dims: (
+        np.ndarray
+    )  # vec3, list of 3 floats, dimensions (size, local scale) of the geometry
     mesh_asset_fname: str  # path to the triangle mesh, if any. Typically relative to the URDF, SDF or MJCF file location, but could be absolute.
-    local_vis_frame_pos: np.ndarray  # position of local visual frame, relative to link/joint frame
-    local_vis_frame_orn: np.ndarray  # orientation of local visual frame relative to link/joint frame
+    local_vis_frame_pos: (
+        np.ndarray
+    )  # position of local visual frame, relative to link/joint frame
+    local_vis_frame_orn: (
+        np.ndarray
+    )  # orientation of local visual frame relative to link/joint frame
     rgba_colour: np.ndarray  # URDF color (if any specified) in red/green/blue/alpha
     # texture_uid: int  # (field only exists if using VISUAL_SHAPE_DATA_TEXTURE_UNIQUE_IDS flags)Texture unique id of the shape, or -1 if none
 
@@ -90,7 +110,6 @@ class VisualShapeData:
 
 @dataclass
 class BulletContactInfo:
-
     """
     Contact information between two rigid body links
     More info at: https://docs.google.com/document/d/10sXEhzFRSnvFcl3XxNGhnD4N2SedqwdAvK3dsihxVUA/edit#
@@ -103,13 +122,21 @@ class BulletContactInfo:
     link_id_a: int  # link index of body A, -1 for base
     link_id_b: int  # link index of body B, -1 for base
     position_on_a: np.ndarray  # contact 3D position on A, in Cartesian world coordinate
-    position_on_b: np.ndarray  # contact 3D position on B, in Cartesian world coordinates
+    position_on_b: (
+        np.ndarray
+    )  # contact 3D position on B, in Cartesian world coordinates
     contact_normal_on_b: np.ndarray  # contact normal on B, pointing towards A
-    contact_distance: float  # contact distance, positive for separation, negative for penetration
+    contact_distance: (
+        float  # contact distance, positive for separation, negative for penetration
+    )
     normal_force: float  # normal force applied during the last 'world.step()'
-    lateral_friction1: float  # lateral friction force in the lateralFrictionDir1 direction
+    lateral_friction1: (
+        float  # lateral friction force in the lateralFrictionDir1 direction
+    )
     lateral_friction_dir1: np.ndarray  # first lateral friction direction
-    lateral_friction2: float  # lateral friction force in the lateralFrictionDir2 direction
+    lateral_friction2: (
+        float  # lateral friction force in the lateralFrictionDir2 direction
+    )
     lateral_friction_dir2: np.ndarray  # second lateral friction direction
 
     def __post_init__(self):

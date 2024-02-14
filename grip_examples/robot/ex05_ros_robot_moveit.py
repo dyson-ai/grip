@@ -17,7 +17,6 @@ from grip.ros.urdf_utils import normalise_urdf_paths
 
 
 class ROSArmMoveitExample(rclpy.node.Node):
-
     """This node example will simulate a robot arm with a wrist camera."""
 
     def __init__(self, camera_fps: int = 10, joint_pub_rate: int = 150):

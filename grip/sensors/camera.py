@@ -32,7 +32,6 @@ VISION_META = {
 
 
 class RGBDCamera(Sensor):
-
     """
     RGBDCamera sensor. Represents a simulated RGBD camera.
 

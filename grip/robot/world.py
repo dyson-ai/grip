@@ -25,7 +25,6 @@ class BulletClient:
 
 
 class BulletWorld:
-
     """
     The BulletWorld represents an interface and connection to a Bullet physics simulation.
 
