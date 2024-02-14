@@ -2,11 +2,11 @@
 
 # Grip
 
-Grip is a prototyping toolbox for robot manipulation research. It contains a collection of tools for creating robot manipulation environments, loading arbitrary robot arms and grippers through URDF, as well as handling and acquiring data from simulated and real RGBD cameras. It also supports ROS2 allowing created environments or applications to be easily integrated in the ros2 ecosystem.
+Grip is a prototyping toolbox for robot manipulation research. It contains a collection of tools for creating robot manipulation environments, loading arbitrary robot arms and grippers through URDF, as well as handling and acquiring data from simulated and real RGBD cameras. It also supports ROS2 allowing created environments or applications to be easily integrated in the ROS2 ecosystem.
 
 ## Installation <a name="installation"></a>
 
-### Pure python installation thorough pip
+### Pure python installation through pip
 
 2. Install
 
@@ -29,13 +29,8 @@ This will run a basic pick and place demo. You should see the robot picking and 
 ```
 python3 -m grip_examples.robot.ex02_robots
 ```
-This will spawn a franka robot that can be controlled through joint sliders. See more examples at `grip_examples`.
+This will spawn a Franka Panda robot that can be controlled through joint sliders. See more examples at `grip_examples`.
 
-3. Run simple ROS2 example (ros2 required)
-
-```
-python3 -m grip_examples.environments.ex04_ros_robot
-```
 
 ## Development setup
 
@@ -60,7 +55,7 @@ Launch file:
 ros2 launch grip ros_arm.launch.py
 ```
 
-You should be able to see a bullet simulation of a panda arm, and a pre-configured rviz displaying the robot model, state, and point cloud as below. This example node is located at `grip/grip_examples/robot/ex04_ros_robot.py`. For more examples see `grip/grip_examples` and `grip/launch`.
+You should be able to see a bullet simulation of a panda arm, and a pre-configured rviz displaying the robot model, state, and point cloud as below. The main node for this example is located at `grip/grip_examples/robot/ex04_ros_robot.py`. For more examples see `grip/grip_examples` and `grip/launch`.
 
 ![Basic ROS2 demo](./grip_assets/media/basic_demo_2x.gif)
 
