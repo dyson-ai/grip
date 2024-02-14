@@ -53,8 +53,9 @@ setup(
     name=package_name,
     version=__version__,
     description=(
-        "grip is a library for Robot Grasp Learning Environments."
-        "The goal of grip is to help prototyping, testing and deploying of robot grasping algorithms."
+        "Grip is a prototyping toolbox for manipulation research."
+        "It contains a collection of tools for creating robot manipulation environments, loading arbitrary robots, including grippers, robot arms, sensors and optional ROS2 interfaces."
+        
     ),
     url="https://github.com/dyson-ai/grip",
     author="Ermano Arruda",

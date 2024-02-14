@@ -5,7 +5,7 @@ from launch.substitutions import Command, FindExecutable
 from launch_ros.actions import Node
 from launch_ros.descriptions import ParameterValue
 
-from grip.ros import depth_proc_launch
+from grip.ros.depth_proc_launch import depth_proc_launch
 import pybullet_data as pd
 
 
