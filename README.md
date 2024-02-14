@@ -8,13 +8,13 @@ Grip is a prototyping toolbox for robot manipulation research powered by [Bullet
 
 ### Pure python installation through pip
 
-2. Install
+1. Install
 
 ```
 pip3 install git+https://github.com/dyson-ai/grip.git
 ```
 
-1. Run simple example (pure-python)
+2. Run simple example (pure-python)
 
 ```
 python3 -m grip_examples.environments.ex01_pick_and_place
@@ -24,7 +24,7 @@ This will run a basic pick and place demo. You should see the robot picking and 
 
 ![Simple python demo](./grip_assets/media/simple_demo.gif)
 
-2. Another example: loading a Franka Panda robot (pure-python)
+3. Another example: loading a Franka Panda robot (pure-python)
       
 ```
 python3 -m grip_examples.robot.ex02_robots
