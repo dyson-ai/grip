@@ -34,7 +34,7 @@ for root, dirs, files in os.walk(hh):
             need_files.append(fn[1 + len(hh) :])
 
 core_requirements = [
-    "setuptools<=65",
+    "setuptools>=65.5.1",
     "numpy>=1.25.2",
     "scipy>=1.11.1",
     "pybullet>=3.2.4",
@@ -50,7 +50,7 @@ core_requirements = [
 ]
 
 setup(
-    name=package_name,
+    name=f"{package_name}-py",
     version=__version__,
     description=(
         "Grip is a prototyping toolbox for manipulation research."
