@@ -4,7 +4,7 @@ pybullet>=3.2.4 # physics engine used for simulation
 open3d>=0.10.0 # point cloud processing tools
 opencv-python>=4.9.0.80 # computer vision tools
 matplotlib>=3.3.4 # plotting tools
-pybullet_planning@git+https://github.com/eaa3/pybullet_planning.git@dev # pure python motion planning
+pybullet-planning-eaa # pure python motion planning
 trimesh==3.9.20 # mesh processing tools
 xatlas==0.0.7 # mesh parametrisation
 transforms3d==0.4.1

@@ -34,7 +34,7 @@ for root, dirs, files in os.walk(hh):
             need_files.append(fn[1 + len(hh) :])
 
 core_requirements = [
-    "setuptools>=65.5.1",
+    "setuptools<=65",
     "numpy>=1.25.2",
     "scipy>=1.11.1",
     "pybullet>=3.2.4",
@@ -42,7 +42,7 @@ core_requirements = [
     "opencv-python>=4.9.0.80",
     "matplotlib>=3.3.4",
     # "ghalton==0.6.1",
-    "pybullet_planning@git+https://github.com/eaa3/pybullet_planning.git@dev",
+    "pybullet-planning-eaa",
     "trimesh>=3.9.20",
     "xatlas>=0.0.7",
     "transforms3d==0.4.1",
@@ -54,7 +54,6 @@ setup(
     version=__version__,
     description="Grip is a prototyping toolbox for manipulation research.",
     long_description=open("README.md").read(),
-    long_description_content_type="text/markdown",
     url="https://github.com/dyson-ai/grip",
     author="Ermano Arruda",
     maintainer="Ermano Arruda",
@@ -95,6 +94,10 @@ setup(
         (
             share_dir + "/grip_assets/config",
             glob.glob(os.path.join("grip_assets/config", "*.yaml")),
+        ),
+        (
+            share_dir,
+            glob.glob("*.md"),
         ),
     ],
     zip_safe=False,
