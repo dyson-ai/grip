@@ -50,7 +50,7 @@ core_requirements = [
 ]
 
 setup(
-    name=f"{package_name}-py",
+    name=f"{package_name}x",
     version=__version__,
     description="Grip is a prototyping toolbox for manipulation research.",
     long_description=open("README.md").read(),
