@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>grip</name>
-  <version>0.0.3</version>
+  <version>0.0.5</version>
   <description>grip is a library for Robot Grasp Learning Environments.</description>
   <maintainer email="ermano.arruda@dyson.com">Ermano Arruda</maintainer>
   <license>MIT</license>
