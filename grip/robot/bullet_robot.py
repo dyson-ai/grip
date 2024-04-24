@@ -1151,13 +1151,13 @@ class BulletRobot(RobotInterface, Entity):
         if self.texture_randomiser is not None:
             self.texture_randomiser.randomise(self)
 
-    def enable_torque_sensor(self, enable: bool) -> None:
+    def enable_torque_sensor(self, enable: bool, joint_id: int = None) -> None:
         """
         Enable or disable torque_sensor.
         """
-
+        joint = self.actuated_joint_ids[-1] if joint_id is None else joint_id
         p.enableJointForceTorqueSensor(
-            self.id, self.ee_index, enable, physicsClientId=self.phys_id
+            self.id, joint, enable, physicsClientId=self.phys_id
         )
 
     def get_contact_force(

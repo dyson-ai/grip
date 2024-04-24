@@ -28,7 +28,9 @@ class BulletRobotiq2FGripper(BulletRobot, EndEffectorType):
     def __init__(self, **kwargs):
         kwargs["urdf_file"] = kwargs.get("urdf_file", None)
         kwargs["ee_index"] = kwargs.get("ee_index", -1)
-        kwargs["tip_link"] = kwargs.get("tip_link", "robotiq_arg2f_base_link")
+        kwargs["tip_link"] = kwargs.get("tip_link", "tool0")
+
+        print("Tip link: ", kwargs["tip_link"])
 
         kwargs["joint_names"] = kwargs.get(
             "joint_names",
@@ -65,9 +67,9 @@ class BulletRobotiq2FGripper(BulletRobot, EndEffectorType):
         lft_pos, _ = self.get_link_pose(self.link_dict["left_inner_finger_tip"])
         rft_pos, _ = self.get_link_pose(self.link_dict["right_inner_finger_tip"])
         ee_payload_pos = (lft_pos + rft_pos) / 2
-        _, ee_payload_quat = self.get_link_pose(
-            self.link_dict["robotiq_arg2f_base_link"]
-        )
+
+        self.get_link_id()
+        _, ee_payload_quat = self.get_link_pose(self.tip_link)
         return ee_payload_pos, ee_payload_quat
 
     @property

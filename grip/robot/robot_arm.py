@@ -58,7 +58,7 @@ class BulletRobotArm(BulletRobot):
                 self.gripper_type,
                 parent=self,
                 max_force=gripper_max_force,
-                ee_index=self.ee_index,
+                tip_link=self.tip_link,
                 urdf_file=None,
                 sliders=self._sliders,
             )

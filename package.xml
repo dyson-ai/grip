@@ -29,6 +29,13 @@
   <exec_depend>ros2_controllers</exec_depend>
   <exec_depend>gripper_controllers</exec_depend>
   <exec_depend>moveit_ros_perception</exec_depend>
+  <exec_depend>python3-pybullet-pip</exec_depend>
+  <exec_depend>python3-open3d-pip</exec_depend>
+  <exec_depend>python-transforms3d-pip</exec_depend>
+  <exec_depend>python3-scipy</exec_depend>
+  <exec_depend>python3-matplotlib</exec_depend>
+  <exec_depend>python3-trimesh-pip</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
 
   <test_depend>python3-pytest</test_depend>
   <export>

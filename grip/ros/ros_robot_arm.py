@@ -83,7 +83,9 @@ class ROSRobotArm(BulletRobotArm):
 
         else:
             self.joint_state_sub = JointStateSub(
-                self.node, joint_update_callback=self.set_angles
+                self.node,
+                topic_name=self.state_topic,
+                joint_update_callback=self.set_angles,
             )
             self.trajectory_client = TrajectoryActionClient(self.node)
 
