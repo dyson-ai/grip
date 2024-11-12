@@ -35,9 +35,9 @@ for root, dirs, files in os.walk(hh):
 
 core_requirements = [
     "setuptools<=65",
-    "numpy>=1.25.2",
+    "numpy>=1.25.2,<=1.26.4",
     "scipy>=1.11.1",
-    "pybullet>=3.2.4",
+    "pybullet>=3.2.6",
     "open3d>=0.10.0",
     "opencv-python>=4.9.0.80",
     "matplotlib>=3.3.4",
@@ -54,10 +54,10 @@ setup(
     version=__version__,
     description="Grip is a prototyping toolbox for manipulation research.",
     long_description=open("README.md").read(),
-    url="https://github.com/dyson-ai/grip",
+    url="https://github.com/eaa3/grip.git",
     author="Ermano Arruda",
     maintainer="Ermano Arruda",
-    maintainer_email="ermano.arruda@dyson.com",
+    maintainer_email="ermano.arruda@gmail.com",
     license="MIT",
     install_requires=core_requirements,
     extras_require={
