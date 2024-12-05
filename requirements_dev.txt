@@ -7,7 +7,7 @@ matplotlib>=3.3.4 # plotting tools
 pybullet-planning-eaa # pure python motion planning
 trimesh==3.9.20 # mesh processing tools
 xatlas==0.0.7 # mesh parametrisation
-transforms3d==0.4.1
+transforms3d>=0.4.1
 wheel
 pytest
 ipdb

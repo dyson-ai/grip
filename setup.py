@@ -45,7 +45,7 @@ core_requirements = [
     "pybullet-planning-eaa",
     "trimesh>=3.9.20",
     "xatlas>=0.0.7",
-    "transforms3d==0.4.1",
+    "transforms3d>=0.4.1",
     "strenum",
 ]
 
