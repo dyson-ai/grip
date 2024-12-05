@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>grip</name>
-  <version>0.0.5</version>
+  <version>0.0.7</version>
   <description>grip is a library for Robot Grasp Learning Environments.</description>
-  <maintainer email="ermano.arruda@dyson.com">Ermano Arruda</maintainer>
+  <maintainer email="ermano.arruda@gmail.com">Ermano Arruda</maintainer>
   <license>MIT</license>
 
-  <url type="repository">https://github.com/dyson-ai/grip</url>
+  <url type="repository">https://github.com/eaa3/grip.git</url>
 
   <exec_depend>rclpy</exec_depend>
 
