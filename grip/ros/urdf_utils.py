@@ -33,7 +33,7 @@ def normalise_urdf_paths(file: Path | str) -> str:
                 )
         for visual in link.visuals:
             if isinstance(
-                collision.geometry,
+                visual.geometry,
                 Mesh,
             ) and visual.geometry.filename.startswith("package://"):
                 package_name, relative_path = visual.geometry.filename.split(
