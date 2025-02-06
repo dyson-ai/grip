@@ -30,3 +30,4 @@ log/
 .pybuild
 _build
 .coverage
+gripx.egg-info
