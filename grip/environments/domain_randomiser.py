@@ -3,7 +3,7 @@ from ..robot import BulletRobot, BulletObject, BulletWorld
 import pybullet as p
 import numpy as np
 from typing import Union, Tuple, List
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 base_dir = get_data_path()
 
@@ -72,8 +72,8 @@ class TextureRandomiser:
 class LightingParameters:
     """This class represents the basic phong illumination model parameters"""
 
-    light_direction: np.ndarray = np.ones(3)
-    light_colour: np.ndarray = np.ones(3)
+    light_direction: np.ndarray = field(default_factory=lambda: np.ones(3))
+    light_colour: np.ndarray = field(default_factory=lambda: np.ones(3))
     specular_coef: int = 1
     diffuse_coef: int = 1
     ambient_coef: int = 1
