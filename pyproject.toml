@@ -43,6 +43,19 @@ dev = [
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+package-dir = {"" = "."}           # project root is “src”
+include-package-data = true
+
+# 1️⃣ Tell setuptools which packages to install
+[tool.setuptools.packages.find]
+where      = ["."]
+include    = ["grip", "grip_assets"]   # explicit is safest
+
+# 2️⃣ Ship every file inside grip_assets
+[tool.setuptools.package-data]
+"grip_assets" = ["**/*"]            # glob relative to that package
+
 [tool.ruff]
 target-version = "py312"
 select = [
