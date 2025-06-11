@@ -12,7 +12,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: eaa3/pypi-auto-publish@feature_checkout_with_lfs
+      - uses: eaa3/pypi-auto-publish@feature/checkout_with_lfs
         with:
           pypi-token: ${{ secrets.PYPI_API_TOKEN }}
           gh-token: ${{ secrets.GITHUB_TOKEN }}
