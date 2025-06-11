@@ -30,7 +30,7 @@ for root, dirs, files in os.walk(hh):
 
 setup(
     name=f"{package_name}x",
-    version="0.0.14",
+    version="0.0.15",
     description="Grip is a prototyping toolbox for manipulation research.",
     long_description=open("README.md").read(),
     url="https://github.com/eaa3/grip.git",
