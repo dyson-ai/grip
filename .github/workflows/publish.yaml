@@ -1,12 +1,12 @@
 name: Auto-publish
 
-on: [workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   # Auto-publish when version is increased
   publish-job:
     # Only publish on `main` branch
-    # if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions: # Don't forget permissions
       contents: write
