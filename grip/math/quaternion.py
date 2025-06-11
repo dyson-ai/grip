@@ -201,7 +201,7 @@ def quaternion_from_matrix2(R: np.ndarray) -> np.ndarray:
 
 
 def quaternion2rotation_matrix(
-    quaternion: Union[np.ndarray, List[float]]
+    quaternion: Union[np.ndarray, List[float]],
 ) -> np.ndarray:
     """
     Returns a rotation matrix from a quaternion

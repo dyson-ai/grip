@@ -1,5 +1,3 @@
-from .version import __version__
-
 # from gym.envs.registration import register
 
 # register(

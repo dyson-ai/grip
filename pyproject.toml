@@ -1,5 +1,63 @@
+[project]
+name = "gripx"
+version = "0.0.14"
+description = "Grip is a prototyping toolbox for manipulation research."
+readme = "README.md"
+requires-python = ">=3.7,<3.13"
+authors = [
+    {name = "Ermano Arruda", email = "ermano.arruda@gmail.com"}
+]
+dependencies = [
+    "setuptools>=69.0.0",
+    "numpy>=1.25.2,<=1.26.4",
+    "scipy>=1.11.1",
+    "pybullet>=3.2.6",
+    "open3d>=0.10.0",
+    "opencv-python>=4.9.0.80",
+    "matplotlib>=3.3.4",
+    "pybullet-planning-eaa",
+    "trimesh>=3.9.20",
+    "xatlas>=0.0.7",
+    "transforms3d>=0.4.1",
+    "strenum",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ipdb",
+    "black>=25.1.0",
+    "check-manifest>=0.49,<=0.49",
+    "pre-commit>=3.3.3,<=3.3.3",
+    "pylint>=2.16,<=2.17.5",
+    "pytest-cov>=4.1,<=4.1",
+    "pytest-mock>=3.10,<=3.11.1",
+    "pytest-runner<=6.0,>=6.0",
+    "pytest>=7.4,<=7.4",
+    "hypothesis>=6.82,<=6.82.2",
+    "ruff>=0.0.28,<=0.0.28",
+    "coverage>=7.2.7,<=7.3.0",
+    "sphinx",]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "."}           # project root is “src”
+include-package-data = true
+
+# 1️⃣ Tell setuptools which packages to install
+[tool.setuptools.packages.find]
+where      = ["."]
+include    = ["grip", "grip_assets"]   # explicit is safest
+
+# 2️⃣ Ship every file inside grip_assets
+[tool.setuptools.package-data]
+"grip_assets" = ["**/*"]            # glob relative to that package
+
 [tool.ruff]
-target-version = "py310"
+target-version = "py312"
 select = [
   "F", # pyflakes
   "E",
