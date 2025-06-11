@@ -50,7 +50,6 @@ include-package-data = true
 # 1️⃣ Tell setuptools which packages to install
 [tool.setuptools.packages.find]
 where      = ["."]
-include    = ["grip", "grip_assets"]   # explicit is safest
 
 # 2️⃣ Ship every file inside grip_assets
 [tool.setuptools.package-data]
