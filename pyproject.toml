@@ -20,6 +20,7 @@ dependencies = [
     "xatlas>=0.0.7",
     "transforms3d>=0.4.1",
     "strenum",
+    "ipython>=8.37.0"
 ]
 
 [project.optional-dependencies]
