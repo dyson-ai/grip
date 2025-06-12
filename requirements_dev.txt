@@ -1,8 +1,8 @@
-numpy>=1.25.2,<=1.26.4 # numerical computing library
+numpy>=2.2.6 # numerical computing library
 scipy>=1.11.1 # scientific computation tools
 pybullet>=3.2.7 # physics engine used for simulation
-open3d>=0.10.0 # point cloud processing tools
-# opencv-python>=4.9.0.80 # computer vision tools
+open3d>=0.19.0 # point cloud processing tools
+opencv-python>=4.11.0.86 # computer vision tools
 matplotlib>=3.3.4 # plotting tools
 pybullet-planning-eaa # pure python motion planning
 trimesh==3.9.20 # mesh processing tools

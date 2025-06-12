@@ -9,11 +9,11 @@ authors = [
 ]
 dependencies = [
     "setuptools>=69.0.0",
-    "numpy>=1.25.2,<=1.26.4",
+    "numpy>=2.2.6",
     "scipy>=1.11.1",
     "pybullet>=3.2.6",
-    "open3d>=0.10.0",
-    "opencv-python>=4.9.0.80",
+    "open3d>=0.19.0",
+    "opencv-python>=4.11.0.86",
     "matplotlib>=3.3.4",
     "pybullet-planning-eaa",
     "trimesh>=3.9.20",
