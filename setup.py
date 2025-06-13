@@ -30,7 +30,7 @@ for root, dirs, files in os.walk(hh):
 
 setup(
     name=f"{package_name}x",
-    version="0.0.16",
+    version="0.0.18",
     description="Grip is a prototyping toolbox for manipulation research.",
     long_description=open("README.md").read(),
     url="https://github.com/eaa3/grip.git",
@@ -40,7 +40,7 @@ setup(
     license="MIT",
     python_requires=">=3.10,<3.13",
     classifiers=[
-        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.12",
     ],
     tests_require=["pytest"],

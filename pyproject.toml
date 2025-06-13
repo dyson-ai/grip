@@ -1,6 +1,6 @@
 [project]
 name = "gripx"
-version = "0.0.16"
+version = "0.0.18"
 description = "Grip is a prototyping toolbox for manipulation research."
 readme = "README.md"
 requires-python = ">=3.7,<3.13"
@@ -9,17 +9,18 @@ authors = [
 ]
 dependencies = [
     "setuptools>=69.0.0",
-    "numpy>=1.25.2,<=1.26.4",
+    "numpy>=2.2.6",
     "scipy>=1.11.1",
     "pybullet>=3.2.6",
-    "open3d>=0.10.0",
-    "opencv-python>=4.9.0.80",
+    "open3d>=0.19.0",
+    "opencv-python>=4.10.0.84",
     "matplotlib>=3.3.4",
     "pybullet-planning-eaa",
     "trimesh>=3.9.20",
     "xatlas>=0.0.7",
     "transforms3d>=0.4.1",
     "strenum",
+    "ipython>=8.37.0"
 ]
 
 [project.optional-dependencies]
