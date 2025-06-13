@@ -1,6 +1,6 @@
 [project]
 name = "gripx"
-version = "0.0.17"
+version = "0.0.18"
 description = "Grip is a prototyping toolbox for manipulation research."
 readme = "README.md"
 requires-python = ">=3.7,<3.13"
